@@ -97,5 +97,12 @@ Rédigez les scripts SQL suivants pour répondre aux besoins de la plateforme IT
   
 
 4. **Requêtes de jointure :**  
-   Exemple : Récupérer les détails des projets liés à une catégorie spécifique.  
+   Exemple : Récupérer les détails des projets liés à une catégorie spécifique.
+
+## Bonus et Recommandations:
+
+- Utiliser des index pour optimiser les performances des requêtes.
+- Implémenter des contraintes d'intégrité pour assurer la qualité des données.
+- Considérer l'utilisation de procédures stockées pour des opérations complexes.
+- Effectuer des tests de performance sur des charges simulées pour évaluer la robustesse de la base de données.
 
