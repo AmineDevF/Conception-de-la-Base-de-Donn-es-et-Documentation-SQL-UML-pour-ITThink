@@ -76,9 +76,26 @@ En tant que responsable de la base de données :
 
 ---
 
-## Bonus et Recommandations
+## Scripts SQL
 
-- Utiliser des **index** pour optimiser les performances des requêtes.
-- Implémenter des **contraintes d'intégrité** pour assurer la qualité des données.
-- Considérer l'utilisation de **procédures stockées** pour des opérations complexes.
-- Effectuer des tests de performance sur des charges simulées pour évaluer la robustesse de la base de données.
+Rédigez les scripts SQL suivants pour répondre aux besoins de la plateforme ITThink :
+
+1. **Créer la base de données et les tables :**  
+   - Tables : `Utilisateurs`, `Catégories`, `Sous-Catégories`, `Projets`, `Freelances`, `Offres`, `Témoignages`.
+
+2. **Mise à jour des tables :**  
+
+   - Modifier ou ajouter des champs dans une table existante, par exemple ajouter une colonne `date_creation` dans la table `Projets`.
+
+3. **Réaliser des opérations courantes :**
+
+   - **Insertion :** Ajouter une nouvelle offre dans la table `Offres`.  
+
+   - **Mise à jour :** Modifier les détails d’un projet.  
+
+   - **Suppression :** Supprimer un témoignage.  
+  
+
+4. **Requêtes de jointure :**  
+   Exemple : Récupérer les détails des projets liés à une catégorie spécifique.  
+
