@@ -1,108 +1,91 @@
-# ITThink - Base de Données
+# ITThink Dashboard - Phase 2
 
-## Contexte du Projet
+## 🕹️ Contexte
 
-**Objectif** : Concevoir une base de données efficace et bien structurée pour prendre en charge l'ensemble des fonctionnalités de *ITThink*, assurant une gestion optimale des données.
+Cette deuxième étape du projet **ITThink** vise à développer un **dashboard interactif** et une interface utilisateur conviviale pour la gestion des :
+- Utilisateurs
+- Projets
+- Freelances
+- Catégories
+- Sous-catégories
+- Offres
+- Témoignages
 
-Le schéma de base de données suivant est conçu pour répondre aux besoins de *ITThink*, une plateforme mettant en relation des utilisateurs, des projets, des catégories, des sous-catégories, des freelances, des offres, et des témoignages. Les tables incluent des clés primaires, des clés étrangères, et des informations essentielles pour garantir une gestion efficace des données.
-
----
-
-## Schéma de la Base de Données
-
-### Tables
-
-1. **Utilisateurs**
-   - `id_utilisateur` (Clé primaire)
-   - `nom_utilisateur`
-   - `mot_de_passe` (haché)
-   - `email`
-   - Autres informations pertinentes
-
-2. **Catégories**
-   - `id_categorie` (Clé primaire)
-   - `nom_categorie`
-
-3. **Sous-Catégories**
-   - `id_sous_categorie` (Clé primaire)
-   - `nom_sous_categorie`
-   - `id_categorie` (Clé étrangère vers la table `Categories`)
-
-4. **Projets**
-   - `id_projet` (Clé primaire)
-   - `titre_projet`
-   - `description`
-   - `id_categorie` (Clé étrangère vers la table `Categories`)
-   - `id_sous_categorie` (Clé étrangère vers la table `Sous-Categories`)
-   - `id_utilisateur` (Clé étrangère vers la table `Utilisateurs`)
-
-5. **Freelances**
-   - `id_freelance` (Clé primaire)
-   - `nom_freelance`
-   - `competences`
-   - `id_utilisateur` (Clé étrangère vers la table `Utilisateurs`)
-
-6. **Offres**
-   - `id_offre` (Clé primaire)
-   - `montant`
-   - `delai`
-   - `id_freelance` (Clé étrangère vers la table `Freelances`)
-   - `id_projet` (Clé étrangère vers la table `Projets`)
-
-7. **Témoignages**
-   - `id_temoignage` (Clé primaire)
-   - `commentaire`
-   - `id_utilisateur` (Clé étrangère vers la table `Utilisateurs`)
+L’implémentation se fera en **PHP procédural** avec une connexion à une base de données **MySQL** via **PDO** ou **MySQLi**, garantissant une **bonne sécurité** et une **performance optimale**.
 
 ---
 
-## Documentation SQL/UML
+## 🔢 Structure du Dashboard
 
-- Réaliser des diagrammes UML décrivant les entités, relations, et cardinalités.
-- Documenter les requêtes SQL pour créer la structure de la base de données.
+### 🔐 Page de Connexion (Login / Register)
+- Formulaire pour saisir l’**email** et le **mot de passe**.
+- Validation **côté client** et **serveur**.
+- Gestion de session PHP pour les utilisateurs authentifiés.
+
+### 🏠 Page d’Accueil du Dashboard
+- **Statistiques clés** affichées sous forme de cartes ou widgets :
+  - Nombre total d’utilisateurs
+  - Nombre de projets publiés
+  - Nombre de freelances inscrits
+  - Offres en cours
+- Graphiques ou tableaux récapitulatifs (optionnel).
+
+### 🔄 Gestion des Entités
+- **Utilisateurs** : Ajouter, modifier, supprimer et afficher les détails.
+- **Catégories et Sous-Catégories** : Interface pour gérer la hiérarchie des catégories.
+- **Projets** : CRUD (Create, Read, Update, Delete) pour les projets liés à des utilisateurs.
+- **Freelances** : Gestion des freelances inscrits et de leurs compétences.
+- **Offres** : Validation ou suppression des offres soumises.
+- **Témoignages** : Modération et publication.
 
 ---
 
-## User Stories du Responsable de la Base de Données
+## 🛠️ Technologies Utilisées
 
-En tant que responsable de la base de données :
+### 🌐 Front-end
+- **HTML5 / CSS3** pour la structure et le style de l’interface.
+- **Framework CSS (Bootstrap / Tailwind)** pour un design responsive.
 
-1. Concevoir un schéma de base de données qui répond aux besoins actuels et futurs de *ITThink*.
-2. Documenter clairement les relations entre les entités à l'aide de diagrammes UML.
-3. Écrire des scripts SQL pour créer la base de données conformément au schéma défini.
-4. Mettre en place des procédures de sauvegarde automatiques et régulières.
-5. Planifier des sessions de maintenance pour garantir des performances optimales.
-6. Anticiper la croissance de la plateforme en concevant une base de données évolutive.
+### 🔧 Back-end
+- **PHP (procédural)** pour la logique serveur.
+- **MySQL** pour le stockage des données.
+- Utilisation de **PDO** ou **MySQLi** pour la connexion à la base de données.
 
 ---
 
-## Scripts SQL
+## 🎨 Fonctionnalités Principales
 
-Rédigez les scripts SQL suivants pour répondre aux besoins de la plateforme ITThink :
+### 🔐 Connexion et Sécurité
+- Hachage des mots de passe avec **password_hash**.
+- Vérification des identifiants via requêtes SQL préparées.
+- Gestion des sessions et système de déconnexion.
 
-1. **Créer la base de données et les tables :**  
-   - Tables : `Utilisateurs`, `Catégories`, `Sous-Catégories`, `Projets`, `Freelances`, `Offres`, `Témoignages`.
+### 🔄 CRUD pour les Entités
+- **Ajouter** : Formulaires avec validation.
+- **Lire** : Tableaux récapitulatifs avec pagination.
+- **Modifier** : Pré-remplissage des formulaires.
+- **Supprimer** : Confirmation avant suppression.
 
-2. **Mise à jour des tables :**  
+### 🔎 Filtrage et Recherche
+- Moteur de recherche pour les projets, freelances, et offres.
+- Filtrage par catégorie, statut ou date.
 
-   - Modifier ou ajouter des champs dans une table existante, par exemple ajouter une colonne `date_creation` dans la table `Projets`.
+### 📊 Graphiques Statistiques (optionnel)
+- Intégration de bibliothèques comme **Chart.js** pour afficher les données sous forme visuelle.
 
-3. **Réaliser des opérations courantes :**
+### ⚖️ Gestion des Permissions
+- **Rôles** : Administrateurs vs utilisateurs standard.
+- Accès restreint à certaines fonctionnalités selon les rôles.
 
-   - **Insertion :** Ajouter une nouvelle offre dans la table `Offres`.  
+---
 
-   - **Mise à jour :** Modifier les détails d’un projet.  
+## 🗞️ User Stories pour l’Interface Utilisateur
 
-   - **Suppression :** Supprimer un témoignage.  
-  
-
-4. **Requêtes de jointure :**  
-   Exemple : Récupérer les détails des projets liés à une catégorie spécifique.
-
-## Bonus et Recommandations:
-
-- Utiliser des index pour optimiser les performances des requêtes.
-- Implémenter des contraintes d'intégrité pour assurer la qualité des données.
-- Considérer l'utilisation de procédures stockées pour des opérations complexes.
-- Effectuer des tests de performance sur des charges simulées pour évaluer la robustesse de la base de données.
-
+- **En tant qu’administrateur**, je peux consulter un tableau des projets pour voir leur statut et les modifier.
+- **En tant qu’utilisateur**, je peux ajouter un nouveau projet et lui associer une catégorie et un freelance.
+- **En tant qu’administrateur**, je peux gérer les témoignages publiés sur la plateforme.
+- **En tant qu’utilisateur**, je peux soumettre une offre pour un projet spécifique.
+- **En tant que freelance**, je peux consulter les projets disponibles et soumettre des offres.
+- **En tant qu’administrateur**, je peux créer, modifier et supprimer des catégories et sous-catégories.
+- **En tant qu’utilisateur**, je peux écrire un témoignage sur un projet réalisé.
+- **En tant qu’administrateur**, je peux visualiser les statistiques globales (nombre d’utilisateurs, projets, freelances, etc.).
