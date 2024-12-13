@@ -23,18 +23,25 @@ L’implémentation se fera en **PHP procédural** avec une connexion à une bas
 - Gestion de session PHP pour les utilisateurs authentifiés.
 
 ### 🏠 Page d’Accueil du Dashboard
-- **Statistiques clés** affichées sous forme de cartes ou widgets :
-  - Nombre total d’utilisateurs
-  - Nombre de projets publiés
-  - Nombre de freelances inscrits
-  - Offres en cours
-- Graphiques ou tableaux récapitulatifs (optionnel).
 
-### 🔄 Gestion des Entités
+Statistiques clés affichées sous forme de cartes ou widgets :
+
+- Nombre total d’utilisateurs
+- Nombre de projets publiés
+- Nombre de freelances inscrits
+- Offres en cours
+
+Graphiques ou tableaux récapitulatifs (optionnel).
+
+## 🔄 Gestion des Entités
+
 - **Utilisateurs** : Ajouter, modifier, supprimer et afficher les détails.
 - **Catégories et Sous-Catégories** : Interface pour gérer la hiérarchie des catégories.
 - **Projets** : CRUD (Create, Read, Update, Delete) pour les projets liés à des utilisateurs.
-- **Freelances** : Gestion des freelances inscrits et de leurs compétences.
+- **Freelances** :
+  - Gestion des freelances inscrits et de leurs compétences.
+  - Possibilité de créer un compte freelance.
+  - Soumission d’offres pour les projets déjà créés par les utilisateurs.
 - **Offres** : Validation ou suppression des offres soumises.
 - **Témoignages** : Modération et publication.
 
@@ -79,13 +86,17 @@ L’implémentation se fera en **PHP procédural** avec une connexion à une bas
 
 ---
 
-## 🗞️ User Stories pour l’Interface Utilisateur
+# 🗞️ User Stories pour l’Interface Utilisateur
 
 - **En tant qu’administrateur**, je peux consulter un tableau des projets pour voir leur statut et les modifier.
 - **En tant qu’utilisateur**, je peux ajouter un nouveau projet et lui associer une catégorie et un freelance.
 - **En tant qu’administrateur**, je peux gérer les témoignages publiés sur la plateforme.
 - **En tant qu’utilisateur**, je peux soumettre une offre pour un projet spécifique.
-- **En tant que freelance**, je peux consulter les projets disponibles et soumettre des offres.
+- **En tant que freelance**, je peux :
+  - Créer un compte freelance.
+  - Consulter les projets disponibles.
+  - Soumettre des offres pour les projets déjà créés par les utilisateurs.
 - **En tant qu’administrateur**, je peux créer, modifier et supprimer des catégories et sous-catégories.
 - **En tant qu’utilisateur**, je peux écrire un témoignage sur un projet réalisé.
 - **En tant qu’administrateur**, je peux visualiser les statistiques globales (nombre d’utilisateurs, projets, freelances, etc.).
+eur**, je peux visualiser les statistiques globales (nombre d’utilisateurs, projets, freelances, etc.).
